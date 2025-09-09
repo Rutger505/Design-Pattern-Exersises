@@ -3,48 +3,37 @@ using StrategyPattern.Interfaces.QuackBehavior;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Quic;
 using System.Text;
 using System.Threading.Tasks;
 using StrategyPattern.Interfaces.SinkBehaviour;
 
 namespace StrategyPattern.Ducks
 {
-    internal abstract class Duck
+    internal abstract class Duck(
+        QuackBehavior _quackBehavior,
+        FlyBehavior _flyBehavior,
+        SinkBehaviour _sinkBehavior)
     {
-        private QuackBehavior quackBehavior;
-        private FlyBehavior flyBehavior;
-        private SinkBehaviour sinkBehavior;
+        public QuackBehavior QuackBehavior { private get; set; } = _quackBehavior;
+        public FlyBehavior FlyQBehavior { get; } = _flyBehavior;
+        public SinkBehaviour SinkBehavior { get; } = _sinkBehavior;
 
         public abstract void Display();
 
         public void PerformQuack()
         {
-            quackBehavior.Quack();
+            QuackBehavior.Quack();
         }
 
         public void PerformSink()
         {
-            sinkBehavior.Sink();
+            SinkBehavior.Sink();
         }
 
         public void PerformFly()
         {
-            flyBehavior.Fly();
-        }
-
-        public void SetFlyBehavior(FlyBehavior fb)
-        {
-            flyBehavior = fb;
-        }
-
-        public void SetQuackBehavior(QuackBehavior qb)
-        {
-            quackBehavior = qb;
-        }
-
-        public void SetSinkBehavior(SinkBehaviour sb)
-        {
-            sinkBehavior = sb;
+            FlyQBehavior.Fly();
         }
 
         public void Swim()

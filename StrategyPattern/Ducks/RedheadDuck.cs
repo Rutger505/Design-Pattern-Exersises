@@ -9,15 +9,8 @@ using StrategyPattern.Interfaces.SinkBehaviour;
 
 namespace StrategyPattern.Ducks
 {
-    internal class RedheadDuck : Duck
+    internal class RedheadDuck() : Duck(new RegularQuack(), new FlyWithWings(), new SinkNever())
     {
-        public RedheadDuck()
-        {
-            SetQuackBehavior(new RegularQuack());
-            SetFlyBehavior(new FlyWithWings());
-            SetSinkBehavior(new SinkNever());
-        }
-
         public override void Display()
         {
             Console.WriteLine("I'm a RedHead Duck");

@@ -9,15 +9,8 @@ using StrategyPattern.Interfaces.SinkBehaviour;
 
 namespace StrategyPattern.Ducks
 {
-    internal class RobotDuck : Duck
+    internal class RobotDuck() : Duck(new Squeak(), new FlyNoWay(), new SinkRegular())
     {
-        public RobotDuck()
-        {
-            SetQuackBehavior(new Squeak());
-            SetFlyBehavior(new FlyNoWay());
-            SetSinkBehavior(new SinkRegular());
-        }
-
         public override void Display()
         {
             Console.WriteLine("I'm a Robot Duck");

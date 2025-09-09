@@ -9,15 +9,8 @@ using StrategyPattern.Interfaces.SinkBehaviour;
 
 namespace StrategyPattern.Ducks
 {
-    internal class DecoyDuck : Duck
+    internal class DecoyDuck() : Duck(new MuteQuack(), new FlyNoWay(), new SinkNever())
     {
-        public DecoyDuck()
-        {
-            SetQuackBehavior(new MuteQuack());
-            SetFlyBehavior(new FlyNoWay());
-            SetSinkBehavior(new SinkNever());
-        }
-
         public override void Display()
         {
             Console.WriteLine("I'm a Decoy Duck");
