@@ -32,17 +32,17 @@ namespace StrategyPattern.Ducks
             flyBehavior.Fly();
         }
 
-        protected void SetFlyBehavior(FlyBehavior fb)
+        public void SetFlyBehavior(FlyBehavior fb)
         {
             flyBehavior = fb;
         }
 
-        protected void SetQuackBehavior(QuackBehavior qb)
+        public void SetQuackBehavior(QuackBehavior qb)
         {
             quackBehavior = qb;
         }
 
-        protected void SetSinkBehavior(SinkBehaviour sb)
+        public void SetSinkBehavior(SinkBehaviour sb)
         {
             sinkBehavior = sb;
         }
