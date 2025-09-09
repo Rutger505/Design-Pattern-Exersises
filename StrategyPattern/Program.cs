@@ -1,5 +1,7 @@
 ﻿using StrategyPattern.Ducks;
 using StrategyPattern.Interfaces.FlyBehavior;
+using StrategyPattern.Interfaces.QuackBehavior;
+using StrategyPattern.Interfaces.SinkBehaviour;
 
 namespace StrategyPattern
 {
@@ -17,6 +19,14 @@ namespace StrategyPattern
             TestDuck(redheadDuck);
             TestDuck(decoyDuck);
             TestDuck(rubberDuck);
+            TestDuck(robotDuck);
+
+            Console.WriteLine(
+                "Changing RobotDuck's behaviors to FlyWithWings, RegularQuack, and SinkNever at runtime:"
+            );
+            robotDuck.FlyBehavior = new FlyWithWings();
+            robotDuck.QuackBehavior = new RegularQuack();
+            robotDuck.SinkBehavior = new SinkNever();
             TestDuck(robotDuck);
         }
 

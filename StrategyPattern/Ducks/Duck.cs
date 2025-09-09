@@ -16,8 +16,8 @@ namespace StrategyPattern.Ducks
         SinkBehaviour _sinkBehavior)
     {
         public QuackBehavior QuackBehavior { private get; set; } = _quackBehavior;
-        public FlyBehavior FlyQBehavior { get; } = _flyBehavior;
-        public SinkBehaviour SinkBehavior { get; } = _sinkBehavior;
+        public FlyBehavior FlyBehavior { private get; set; } = _flyBehavior;
+        public SinkBehaviour SinkBehavior { private get; set; } = _sinkBehavior;
 
         public abstract void Display();
 
@@ -33,7 +33,7 @@ namespace StrategyPattern.Ducks
 
         public void PerformFly()
         {
-            FlyQBehavior.Fly();
+            FlyBehavior.Fly();
         }
 
         public void Swim()
