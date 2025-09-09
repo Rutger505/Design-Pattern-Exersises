@@ -13,9 +13,9 @@ namespace StrategyPattern.Ducks
     {
         public RobotDuck()
         {
-            quackBehavior = new Squeak();
-            flyBehavior = new FlyNoWay();
-            sinkBehaviour = new SinkRegular();
+            SetQuackBehavior(new Squeak());
+            SetFlyBehavior(new FlyNoWay());
+            SetSinkBehavior(new SinkRegular());
         }
 
         public override void Display()

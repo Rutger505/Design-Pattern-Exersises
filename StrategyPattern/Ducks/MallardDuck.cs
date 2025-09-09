@@ -13,9 +13,9 @@ namespace StrategyPattern.Ducks
     {
         public MallardDuck()
         {
-            quackBehavior = new RegularQuack();
-            flyBehavior = new FlyWithWings();
-            sinkBehaviour = new SinkNever();
+            SetQuackBehavior(new RegularQuack());
+            SetFlyBehavior(new FlyWithWings());
+            SetSinkBehavior(new SinkNever());
         }
 
         public override void Display()
