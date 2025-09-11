@@ -29,7 +29,31 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            Console.WriteLine($"Forecast: More of the same");
+            if (humidity < 50)
+            {
+                Console.WriteLine("It's going to be sunny");
+            }
+            else if (humidity >= 50 && humidity < 80)
+            {
+                Console.WriteLine("It's going to be cloudy");
+            }
+            else
+            {
+                Console.WriteLine("It's going to rain");
+            }
+
+            if (temperature < 20)
+            {
+                Console.WriteLine("It's going to be cold");
+            }
+            else if (temperature >= 20 && temperature < 30)
+            {
+                Console.WriteLine("It's going to be warm");
+            }
+            else
+            {
+                Console.WriteLine("It's going to be hot");
+            }
         }
     }
 }
