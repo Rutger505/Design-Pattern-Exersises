@@ -12,22 +12,25 @@ namespace DecoratorPattern.Beverages
         {
             description = "Espresso";
             this.baseBeverage = beverage;
-        
         }
+
         public override string GetDescription()
         {
             if (baseBeverage != null)
             {
                 return baseBeverage.GetDescription() + ", " + description;
             }
+
             return description;
         }
+
         public override double cost()
         {
             if (baseBeverage != null)
             {
                 return 1.99 + baseBeverage.cost();
             }
+
             return 1.99;
         }
     }

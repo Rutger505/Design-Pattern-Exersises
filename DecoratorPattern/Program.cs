@@ -30,7 +30,7 @@ internal class Program
             ["Caffé affogato"] = new IceCream(new Espresso(new Espresso())),
             ["Vienna coffee"] = new Whip(new Whip(new Espresso(new Espresso()))),
             ["Glace"] = new IceCream(new Espresso()),
-            ["Chocolate milk"] = new Milk(new Milk(new Chocolate(new Water()))),
+            ["Chocolate milk"] = new Milk(new Milk(new Chocolate())),
             ["Demi – créme"] = new Cream(new Cream(new Espresso(new Espresso()))),
             ["Latte macchiato"] = new MilkFoam(new SteamedMilk(new SteamedMilk(new Espresso()))),
             ["Freddo"] = new Ice(new Liquor(new Espresso())),
@@ -48,6 +48,6 @@ internal class Program
 
     private static void PrintBeverage(string key, Beverage beverage)
     {
-        Console.WriteLine($"{key}: {beverage.GetDescription()} ${beverage.cost():#.##}");
+        Console.WriteLine($"{key}: {beverage.GetDescription()} ${beverage.CostBySize():#.##}");
     }
 }
