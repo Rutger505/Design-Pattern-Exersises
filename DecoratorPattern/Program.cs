@@ -1,28 +1,23 @@
 ﻿using DecoratorPattern.Beverages;
-using DecoratorPattern.Condiments;
 
-namespace DecoratorPattern
+namespace DecoratorPattern;
+
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
+        Dictionary<string, Beverage> beverages = new()
         {
-            Beverage espresso = new Espresso();
-            PrintBeverage(espresso);
+            ["espresso"] = new Espresso(),
+            ["lungo"] = new Water(new Espresso()),
+            ["americano"] = new Water(new Water(new Espresso()))
+        };
+        foreach (var kvp in beverages) PrintBeverage(kvp.Key, kvp.Value);
+    }
 
-            Beverage lungo = new Espresso();
-            lungo = new Water(lungo);
-            PrintBeverage(lungo);
+    private static void PrintBeverage(string key, Beverage beverage)
 
-            Beverage americano = new Espresso();
-            americano = new Water(americano);
-            americano = new Water(americano);
-            PrintBeverage(americano);
-        }
-
-        static void PrintBeverage(Beverage beverage)
-        {
-            Console.WriteLine(beverage.GetDescription() + " $" +  beverage.cost().ToString("#.##"));
-        }
+    {
+        Console.WriteLine($"{key}: {beverage.GetDescription()} ${beverage.cost():#.##}");
     }
 }
