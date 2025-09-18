@@ -7,6 +7,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        Beverage flatWhiteVendi = new IceCream(new Espresso(new Espresso()));
+        flatWhiteVendi.Size = Size.VENDI;
+
         Dictionary<string, Beverage> beverages = new()
         {
             ["Espresso"] = new Espresso(),
@@ -19,6 +22,7 @@ internal class Program
             ["Americano"] = new Water(new Water(new Espresso())),
             ["Caffé Latte"] = new MilkFoam(new SteamedMilk(new SteamedMilk(new Espresso()))),
             ["Flat White"] = new SteamedMilk(new SteamedMilk(new Espresso())),
+            ["Flat White Vendi size"] = flatWhiteVendi,
             ["Romana"] = new Lemon(new Espresso()),
             ["Morocchino"] = new MilkFoam(new Chocolate(new Espresso())),
             ["Mocha"] = new Whip(new SteamedMilk(new Chocolate(new Espresso()))),
