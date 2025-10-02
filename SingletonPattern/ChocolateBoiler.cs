@@ -2,8 +2,10 @@
 
 internal class ChocolateBoiler
 {
-    // This code is only started when the boiler is empty
-    public ChocolateBoiler()
+    private static ChocolateBoiler? _instance;
+    private static readonly object _lock = new();
+
+    private ChocolateBoiler()
     {
         IsEmpty = true;
         IsBoiled = false;
@@ -12,6 +14,15 @@ internal class ChocolateBoiler
     public bool IsEmpty { get; private set; }
 
     public bool IsBoiled { get; private set; }
+
+    public static ChocolateBoiler GetInstance()
+    {
+        lock (_lock)
+        {
+            if (_instance == null) _instance = new ChocolateBoiler();
+            return _instance;
+        }
+    }
 
     // To fill the boiler it must be empty and once it is full, we set the empty and boiled flag
     public void fill()
