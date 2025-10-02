@@ -1,9 +1,8 @@
-﻿namespace Singleton
+﻿namespace SingletonPattern;
+
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
