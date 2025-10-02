@@ -4,22 +4,29 @@ public class Dawg
 {
     private static Dawg _instance;
 
+    private int woofCount;
+
     private Dawg()
     {
+        DoStuffThatTakesLong();
     }
 
-    private int woofCount = 0;
+    private void DoStuffThatTakesLong()
+    {
+        Thread.Sleep(300);
+    }
 
     public static Dawg GetInstance()
     {
         if (_instance == null)
-        {
-            _instance = new Dawg();
-        }
+            lock (_instance)
+            {
+                if (_instance == null)
+                    _instance = new Dawg();
+            }
 
         return _instance;
     }
-
 
     public void Woof()
     {
