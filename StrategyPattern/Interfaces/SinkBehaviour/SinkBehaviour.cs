@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace StrategyPattern.Interfaces.SinkBehaviour;
 
-namespace StrategyPattern.Interfaces.SinkBehaviour
+internal interface SinkBehaviour
 {
-    internal interface SinkBehaviour
-    {
-        public void Sink();
-    }
+    public void Sink();
 }

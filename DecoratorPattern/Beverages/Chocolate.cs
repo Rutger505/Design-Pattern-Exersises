@@ -1,7 +1,4 @@
-﻿using DecoratorPattern.Beverages;
-using DecoratorPattern.Condiments;
-
-namespace DecoratorPattern.Beverages;
+﻿namespace DecoratorPattern.Beverages;
 
 internal class Chocolate : Beverage
 {
@@ -13,20 +10,14 @@ internal class Chocolate : Beverage
 
     public override double cost()
     {
-        if (baseBeverage != null)
-        {
-            return 1.49 + baseBeverage.cost();
-        }
+        if (baseBeverage != null) return 1.49 + baseBeverage.cost();
 
         return 1.49;
     }
 
     public override string GetDescription()
     {
-        if (baseBeverage != null)
-        {
-            return baseBeverage.GetDescription() + ", " + description;
-        }
+        if (baseBeverage != null) return baseBeverage.GetDescription() + ", " + description;
 
         return description;
     }

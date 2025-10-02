@@ -1,58 +1,52 @@
 ﻿using ObserverPattern.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ObserverPattern
+namespace ObserverPattern;
+
+internal class WeatherData : Subject
 {
-    internal class WeatherData : Subject
+    private readonly List<Observer> observers = new();
+    private float humidity;
+    private float pressure;
+    private float temperature;
+
+    public void NotifyObservers()
     {
-        private List<Observer> observers = new List<Observer>();
-        private float temperature;
-        private float humidity;
-        private float pressure;
+        observers.ForEach(o => o.Update(temperature, humidity, pressure));
+    }
 
-        public void NotifyObservers()
+    public void RegisterObserver(Observer o)
+    {
+        if (observers.Contains(o))
         {
-            observers.ForEach((o) => o.Update(temperature, humidity, pressure));
+            Console.WriteLine("Observer already registered");
+            return;
         }
 
-        public void RegisterObserver(Observer o)
-        {
-            if (observers.Contains(o))
-            {
-                Console.WriteLine("Observer already registered");
-                return;
-            }
+        observers.Add(o);
+    }
 
-            observers.Add(o);
+    public void RemoveObserver(Observer o)
+    {
+        if (!observers.Contains(o))
+        {
+            Console.WriteLine("Observer not registered");
+            return;
         }
 
-        public void RemoveObserver(Observer o)
-        {
-            if (!observers.Contains(o))
-            {
-                Console.WriteLine("Observer not registered");
-                return;
-            }
+        observers.Remove(o);
+    }
 
-            observers.Remove(o);
-        }
+    public void MeasurementChanged()
+    {
+        NotifyObservers();
+    }
 
-        public void MeasurementChanged()
-        {
-            NotifyObservers();
-        }
+    public void SetMeasurements(float newTemperature, float newHumidity, float newPressure)
+    {
+        temperature = newTemperature;
+        humidity = newHumidity;
+        pressure = newPressure;
 
-        public void SetMeasurements(float newTemperature, float newHumidity, float newPressure)
-        {
-            temperature = newTemperature;
-            humidity = newHumidity;
-            pressure = newPressure;
-
-            MeasurementChanged();
-        }
+        MeasurementChanged();
     }
 }

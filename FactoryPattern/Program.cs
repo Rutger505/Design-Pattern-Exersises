@@ -39,15 +39,13 @@ internal class Program
             ["Latte macchiato"] = new MilkFoam(new SteamedMilk(new SteamedMilk(new Espresso()))),
             ["Freddo"] = new Ice(new Liquor(new Espresso())),
             ["Frappuccino"] = new Whip(new SteamedMilk(new Ice(new Espresso()))),
-            ["Caramel frappuccino"] = new Syrup(new Cream(new SteamedMilk(new Ice(new Espresso())))),
+            ["Caramel frappuccino"] =
+                new Syrup(new Cream(new SteamedMilk(new Ice(new Espresso())))),
             ["Frappe"] = new IceCream(new SteamedMilk(new SteamedMilk(new Espresso()))),
             ["Irish Coffee"] = new Whip(new Whiskey(new Espresso(new Espresso())))
         };
 
-        foreach (var kvp in beverages)
-        {
-            PrintBeverage(kvp.Key, kvp.Value);
-        }
+        foreach (var kvp in beverages) PrintBeverage(kvp.Key, kvp.Value);
     }
 
     private static void PrintBeverage(string key, Beverage beverage)

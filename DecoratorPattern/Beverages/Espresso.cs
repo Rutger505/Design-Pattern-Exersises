@@ -1,37 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DecoratorPattern.Beverages;
 
-namespace DecoratorPattern.Beverages
+internal class Espresso : Beverage
 {
-    internal class Espresso : Beverage
+    public Espresso(Beverage beverage = null)
     {
-        public Espresso(Beverage beverage = null)
-        {
-            description = "Espresso";
-            this.baseBeverage = beverage;
-        }
+        description = "Espresso";
+        baseBeverage = beverage;
+    }
 
-        public override string GetDescription()
-        {
-            if (baseBeverage != null)
-            {
-                return baseBeverage.GetDescription() + ", " + description;
-            }
+    public override string GetDescription()
+    {
+        if (baseBeverage != null) return baseBeverage.GetDescription() + ", " + description;
 
-            return description;
-        }
+        return description;
+    }
 
-        public override double cost()
-        {
-            if (baseBeverage != null)
-            {
-                return 1.99 + baseBeverage.cost();
-            }
+    public override double cost()
+    {
+        if (baseBeverage != null) return 1.99 + baseBeverage.cost();
 
-            return 1.99;
-        }
+        return 1.99;
     }
 }

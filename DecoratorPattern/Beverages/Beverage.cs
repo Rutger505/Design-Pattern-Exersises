@@ -1,44 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DecoratorPattern.Beverages;
 
-namespace DecoratorPattern.Beverages
+internal enum Size
 {
-    enum Size
+    TALL,
+    GRANDE,
+    VENDI
+}
+
+internal abstract class Beverage(Size size = Size.TALL)
+
+{
+    protected Beverage baseBeverage = null;
+
+
+    protected string description = "Unknown";
+    public Size Size { get; set; } = size;
+
+
+    public virtual string GetDescription()
     {
-        TALL,
-        GRANDE,
-        VENDI
+        return description;
     }
 
-    internal abstract class Beverage(Size size = Size.TALL)
+    public abstract double cost();
 
+    public double CostBySize()
     {
-        public Size Size { get; set; } = size;
-
-
-        protected string description = "Unknown";
-        protected Beverage baseBeverage = null;
-
-
-        public virtual string GetDescription()
+        return Size switch
         {
-            return description;
-        }
-
-        public abstract double cost();
-
-        public double CostBySize()
-        {
-            return Size switch
-            {
-                Size.VENDI => cost() * 2.0,
-                Size.GRANDE => cost() * 1.5,
-                Size.TALL => cost() * 1.3,
-                _ => throw new Exception("Invalid size")
-            };
-        }
+            Size.VENDI => cost() * 2.0,
+            Size.GRANDE => cost() * 1.5,
+            Size.TALL => cost() * 1.3,
+            _ => throw new Exception("Invalid size")
+        };
     }
 }

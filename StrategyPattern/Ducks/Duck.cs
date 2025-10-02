@@ -1,44 +1,37 @@
 ﻿using StrategyPattern.Interfaces.FlyBehavior;
 using StrategyPattern.Interfaces.QuackBehavior;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Quic;
-using System.Text;
-using System.Threading.Tasks;
 using StrategyPattern.Interfaces.SinkBehaviour;
 
-namespace StrategyPattern.Ducks
+namespace StrategyPattern.Ducks;
+
+internal abstract class Duck(
+    QuackBehavior _quackBehavior,
+    FlyBehavior _flyBehavior,
+    SinkBehaviour _sinkBehavior)
 {
-    internal abstract class Duck(
-        QuackBehavior _quackBehavior,
-        FlyBehavior _flyBehavior,
-        SinkBehaviour _sinkBehavior)
+    public QuackBehavior QuackBehavior { private get; set; } = _quackBehavior;
+    public FlyBehavior FlyBehavior { private get; set; } = _flyBehavior;
+    public SinkBehaviour SinkBehavior { private get; set; } = _sinkBehavior;
+
+    public abstract void Display();
+
+    public void PerformQuack()
     {
-        public QuackBehavior QuackBehavior { private get; set; } = _quackBehavior;
-        public FlyBehavior FlyBehavior { private get; set; } = _flyBehavior;
-        public SinkBehaviour SinkBehavior { private get; set; } = _sinkBehavior;
+        QuackBehavior.Quack();
+    }
 
-        public abstract void Display();
+    public void PerformSink()
+    {
+        SinkBehavior.Sink();
+    }
 
-        public void PerformQuack()
-        {
-            QuackBehavior.Quack();
-        }
+    public void PerformFly()
+    {
+        FlyBehavior.Fly();
+    }
 
-        public void PerformSink()
-        {
-            SinkBehavior.Sink();
-        }
-
-        public void PerformFly()
-        {
-            FlyBehavior.Fly();
-        }
-
-        public void Swim()
-        {
-            Console.WriteLine("All ducks float, even decoys!");
-        }
+    public void Swim()
+    {
+        Console.WriteLine("All ducks float, even decoys!");
     }
 }
