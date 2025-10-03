@@ -4,5 +4,5 @@ namespace FactoryPattern.Stores;
 
 internal interface IBeverageStore
 {
-    Beverage CreateBeverage(Beverages type);
+    Beverage CreateBeverage(BeverageType type);
 }

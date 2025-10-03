@@ -6,16 +6,16 @@ internal class Whip : CondimentDecorator
 {
     public Whip(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.10 + baseBeverage.cost();
+        return 0.25 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Whip";
+        return BaseBeverage.GetDescription() + ", Whip";
     }
 }

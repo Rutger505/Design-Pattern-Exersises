@@ -6,16 +6,16 @@ internal class Ice : CondimentDecorator
 {
     public Ice(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.05 + baseBeverage.cost();
+        return 0.05 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Ice";
+        return BaseBeverage.GetDescription() + ", Ice";
     }
 }

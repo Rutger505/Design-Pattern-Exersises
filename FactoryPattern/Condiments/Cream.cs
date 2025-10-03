@@ -6,16 +6,16 @@ internal class Cream : CondimentDecorator
 {
     public Cream(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.20 + baseBeverage.cost();
+        return 0.30 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Cream";
+        return BaseBeverage.GetDescription() + ", Cream";
     }
 }

@@ -6,16 +6,16 @@ internal class Syrup : CondimentDecorator
 {
     public Syrup(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.25 + baseBeverage.cost();
+        return 0.25 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Syrup";
+        return BaseBeverage.GetDescription() + ", Syrup";
     }
 }

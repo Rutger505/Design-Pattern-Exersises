@@ -6,16 +6,16 @@ internal class SteamedMilk : CondimentDecorator
 {
     public SteamedMilk(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.30 + baseBeverage.cost();
+        return 0.35 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Steamed Milk";
+        return BaseBeverage.GetDescription() + ", SteamedMilk";
     }
 }

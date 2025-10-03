@@ -6,16 +6,16 @@ internal class MilkFoam : CondimentDecorator
 {
     public MilkFoam(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.30 + baseBeverage.cost();
+        return 0.15 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Milk Foam";
+        return BaseBeverage.GetDescription() + ", MilkFoam";
     }
 }

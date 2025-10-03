@@ -2,21 +2,21 @@
 
 internal class Water : Beverage
 {
-    public Water(Beverage beverage = null)
+    public Water(Beverage? beverage = null)
     {
-        description = "Water";
-        baseBeverage = beverage;
+        Description = "Water";
+        BaseBeverage = beverage;
     }
 
     public override string GetDescription()
     {
-        if (baseBeverage != null) return baseBeverage.GetDescription() + ", " + description;
-        return description;
+        if (BaseBeverage != null) return BaseBeverage.GetDescription() + ", " + Description;
+        return Description;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        if (baseBeverage != null) return 0.50 + baseBeverage.cost();
+        if (BaseBeverage != null) return 0.50 + BaseBeverage.Cost();
         return 0.50;
     }
 }

@@ -2,22 +2,22 @@
 
 internal class Espresso : Beverage
 {
-    public Espresso(Beverage beverage = null)
+    public Espresso(Beverage? beverage = null)
     {
-        description = "Espresso";
-        baseBeverage = beverage;
+        Description = "Espresso";
+        BaseBeverage = beverage;
     }
 
     public override string GetDescription()
     {
-        if (baseBeverage != null) return baseBeverage.GetDescription() + ", " + description;
+        if (BaseBeverage != null) return BaseBeverage.GetDescription() + ", " + Description;
 
-        return description;
+        return Description;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        if (baseBeverage != null) return 1.99 + baseBeverage.cost();
+        if (BaseBeverage != null) return 1.99 + BaseBeverage.Cost();
 
         return 1.99;
     }

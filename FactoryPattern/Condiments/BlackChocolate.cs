@@ -6,16 +6,16 @@ internal class BlackChocolate : CondimentDecorator
 {
     public BlackChocolate(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.35 + baseBeverage.cost();
+        return 0.35 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Black Chocolate";
+        return BaseBeverage.GetDescription() + ", BlackChocolate";
     }
 }

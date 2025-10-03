@@ -6,16 +6,16 @@ internal class Mocha : CondimentDecorator
 {
     public Mocha(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.20 + baseBeverage.cost();
+        return 0.40 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Mocha";
+        return BaseBeverage.GetDescription() + ", Mocha";
     }
 }

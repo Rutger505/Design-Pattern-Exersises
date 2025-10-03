@@ -6,16 +6,16 @@ internal class Honey : CondimentDecorator
 {
     public Honey(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.30 + baseBeverage.cost();
+        return 0.30 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Honey";
+        return BaseBeverage.GetDescription() + ", Honey";
     }
 }

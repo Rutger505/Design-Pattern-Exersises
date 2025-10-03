@@ -2,23 +2,23 @@
 
 internal class Chocolate : Beverage
 {
-    public Chocolate(Beverage beverage = null)
+    public Chocolate(Beverage? beverage = null)
     {
-        description = "Chocolate";
-        baseBeverage = beverage;
+        Description = "Chocolate";
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        if (baseBeverage != null) return 1.49 + baseBeverage.cost();
+        if (BaseBeverage != null) return 1.49 + BaseBeverage.Cost();
 
         return 1.49;
     }
 
     public override string GetDescription()
     {
-        if (baseBeverage != null) return baseBeverage.GetDescription() + ", " + description;
+        if (BaseBeverage != null) return BaseBeverage.GetDescription() + ", " + Description;
 
-        return description;
+        return Description;
     }
 }

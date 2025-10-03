@@ -6,16 +6,16 @@ internal class Lemon : CondimentDecorator
 {
     public Lemon(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.30 + baseBeverage.cost();
+        return 0.25 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Lemon";
+        return BaseBeverage.GetDescription() + ", Lemon";
     }
 }

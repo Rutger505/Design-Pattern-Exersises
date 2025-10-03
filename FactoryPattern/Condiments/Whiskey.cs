@@ -6,16 +6,16 @@ internal class Whiskey : CondimentDecorator
 {
     public Whiskey(Beverage beverage)
     {
-        baseBeverage = beverage;
+        BaseBeverage = beverage;
     }
 
-    public override double cost()
+    public override double Cost()
     {
-        return 0.70 + baseBeverage.cost();
+        return 0.60 + BaseBeverage.Cost();
     }
 
     public override string GetDescription()
     {
-        return baseBeverage.GetDescription() + ", Whiskey";
+        return BaseBeverage.GetDescription() + ", Whiskey";
     }
 }
