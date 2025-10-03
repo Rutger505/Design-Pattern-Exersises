@@ -1,6 +1,6 @@
 namespace FactoryPattern.Stores;
 
-public enum Beverages
+public enum BeverageType
 {
     Espresso,
     Doppio,
@@ -12,7 +12,6 @@ public enum Beverages
     Americano,
     CaffeLatte,
     FlatWhite,
-    FlatWhiteVendiSize,
     Romana,
     Morocchino,
     Mocha,
