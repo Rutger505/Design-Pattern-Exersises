@@ -1,0 +1,35 @@
+namespace FactoryPattern.Stores;
+
+public enum Beverages
+{
+    Espresso,
+    Doppio,
+    Lungo,
+    Macchiato,
+    Corretta,
+    ConPanna,
+    Cappuccino,
+    Americano,
+    CaffeLatte,
+    FlatWhite,
+    FlatWhiteVendiSize,
+    Romana,
+    Morocchino,
+    Mocha,
+    Bicerin,
+    Breve,
+    RafCoffee,
+    MeadRaf,
+    Galao,
+    CaffeAffogato,
+    ViennaCoffee,
+    Glace,
+    ChocolateMilk,
+    DemiCreme,
+    LatteMacchiato,
+    Freddo,
+    Frappuccino,
+    CaramelFrappuccino,
+    Frappe,
+    IrishCoffee
+}
