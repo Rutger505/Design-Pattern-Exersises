@@ -2,35 +2,31 @@
 
 internal enum Size
 {
-    TALL,
-    GRANDE,
-    VENDI
+    Tall,
+    Grande,
+    Vendi
 }
 
-internal abstract class Beverage(Size size = Size.TALL)
-
+internal abstract class Beverage
 {
-    protected Beverage baseBeverage = null;
-
-
-    protected string description = "Unknown";
-    public Size Size { get; set; } = size;
-
+    protected Beverage? BaseBeverage = null;
+    protected string Description = "Unknown";
+    public Size Size { get; set; } = Size.Tall;
 
     public virtual string GetDescription()
     {
-        return description;
+        return Description;
     }
 
-    public abstract double cost();
+    public abstract double Cost();
 
     public double CostBySize()
     {
         return Size switch
         {
-            Size.VENDI => cost() * 2.0,
-            Size.GRANDE => cost() * 1.5,
-            Size.TALL => cost() * 1.3,
+            Size.Vendi => Cost() * 2.0,
+            Size.Grande => Cost() * 1.5,
+            Size.Tall => Cost() * 1.3,
             _ => throw new Exception("Invalid size")
         };
     }
