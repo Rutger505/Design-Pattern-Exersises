@@ -34,5 +34,17 @@ internal class HomeTheaterFacade(
 
     public void EndMovie()
     {
+        popcornPopper.Off();
+
+        lights.On();
+
+        screen.Up();
+
+        projector.Off();
+
+        amp.Off();
+
+        dvdPlayer.Stop();
+        dvdPlayer.Eject();
     }
 }

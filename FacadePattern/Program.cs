@@ -19,3 +19,5 @@ var homeTheater = new HomeTheaterFacade(
     screen,
     popcornPopper);
 homeTheater.WatchMovie("The Matrix");
+
+homeTheater.EndMovie();
