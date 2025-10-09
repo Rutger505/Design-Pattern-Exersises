@@ -10,17 +10,17 @@ namespace FacadePattern
     {
         public void On()
         {
-
+            Console.WriteLine("PopcornPopper -> On called!");
         }
 
         public void Off()
         {
-
+            Console.WriteLine("PopcornPopper -> Off called!");
         }
 
         public void Pop()
         {
-
+            Console.WriteLine("PopcornPopper -> Pop called!");
         }
     }
 }

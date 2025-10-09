@@ -12,6 +12,7 @@ internal class HomeTheaterFacade(
 {
     public void WatchMovie(string movie)
     {
+        Console.WriteLine("HomeTheaterFacade -> WatchMovie called!");
         popcornPopper.On();
         popcornPopper.Pop();
 
@@ -34,6 +35,7 @@ internal class HomeTheaterFacade(
 
     public void EndMovie()
     {
+        Console.WriteLine("HomeTheaterFacade -> EndMovie called!");
         popcornPopper.Off();
 
         lights.On();
