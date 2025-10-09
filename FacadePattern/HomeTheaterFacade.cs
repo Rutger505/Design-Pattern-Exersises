@@ -1,19 +1,17 @@
 namespace FacadePattern;
 
-public class HomeTheaterFacade
+internal class HomeTheaterFacade(
+    Amplifier amp,
+    Tuner tuner,
+    DvdPlayer dvdPlayer,
+    CdPlayer cdPlayer,
+    Projector projector,
+    TheaterLights lights,
+    Screen screen,
+    PopcornPopper popcornPopper)
 {
     public void WatchMovie(string movie)
     {
-        var amp = new Amplifier();
-        var cdPlayer = new CdPlayer(amp);
-        var dvdPlayer = new DvdPlayer(amp);
-        var popcornPopper = new PopcornPopper();
-        var projector = new Projector();
-        var screen = new Screen();
-        var lights = new TheaterLights();
-        var tuner = new Tuner(amp);
-
-
         popcornPopper.On();
         popcornPopper.Pop();
 
