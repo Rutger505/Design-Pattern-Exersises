@@ -13,9 +13,11 @@ internal class GarageDoorDownCommand : Command
 
     public void Execute()
     {
+        garageDoor.Down();
     }
 
     public void Undo()
     {
+        garageDoor.Up();
     }
 }

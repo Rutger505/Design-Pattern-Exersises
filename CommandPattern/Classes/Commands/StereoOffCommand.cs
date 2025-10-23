@@ -13,9 +13,11 @@ internal class StereoOffCommand : Command
 
     public void Execute()
     {
+        stereo.Off();
     }
 
     public void Undo()
     {
+        stereo.On();
     }
 }

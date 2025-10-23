@@ -13,9 +13,13 @@ internal class StereoOnWithCdCommand : Command
 
     public void Execute()
     {
+        stereo.On();
+        stereo.SetCD();
+        stereo.SetVolume(11);
     }
 
     public void Undo()
     {
+        stereo.Off();
     }
 }

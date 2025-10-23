@@ -13,9 +13,11 @@ internal class LightOnCommand : Command
 
     public void Execute()
     {
+        light.On();
     }
 
     public void Undo()
     {
+        light.Off();
     }
 }
