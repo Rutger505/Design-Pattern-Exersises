@@ -1,24 +1,21 @@
 ﻿using CommandPattern.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CommandPattern.Classes.Commands
+namespace CommandPattern.Classes.Commands;
+
+internal class StereoOffCommand : Command
 {
-    internal class StereoOffCommand : Command
+    private Stereo stereo;
+
+    public StereoOffCommand(Stereo stereo)
     {
-        Stereo stereo;
-        public StereoOffCommand(Stereo stereo)
-        {
-            this.stereo = stereo;
-        }
-        public void Execute()
-        {
-        }
-        public void Undo()
-        {
-        }
+        this.stereo = stereo;
+    }
+
+    public void Execute()
+    {
+    }
+
+    public void Undo()
+    {
     }
 }

@@ -1,25 +1,21 @@
 ﻿using CommandPattern.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CommandPattern.Classes.Commands
+namespace CommandPattern.Classes.Commands;
+
+internal class GarageDoorUpCommand : Command
 {
-    internal class GarageDoorUpCommand : Command
-    {
-        GarageDoor garageDoor;
-        public GarageDoorUpCommand(GarageDoor garageDoor)
-        {
-            this.garageDoor = garageDoor;
-        }
-        public void Execute()
-        {
-        }
+    private GarageDoor garageDoor;
 
-        public void Undo()
-        {
-        }
+    public GarageDoorUpCommand(GarageDoor garageDoor)
+    {
+        this.garageDoor = garageDoor;
+    }
+
+    public void Execute()
+    {
+    }
+
+    public void Undo()
+    {
     }
 }

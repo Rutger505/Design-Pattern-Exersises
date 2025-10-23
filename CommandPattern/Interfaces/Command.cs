@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CommandPattern.Interfaces;
 
-namespace CommandPattern.Interfaces
+internal interface Command
 {
-    internal interface Command
-    {
-        public void Execute();
-        public void Undo();
-    }
+    public void Execute();
+    public void Undo();
 }

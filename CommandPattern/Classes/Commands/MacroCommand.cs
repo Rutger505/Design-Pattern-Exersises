@@ -1,27 +1,23 @@
 ﻿using CommandPattern.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CommandPattern.Classes.Commands
+namespace CommandPattern.Classes.Commands;
+
+internal class MacroCommand : Command
 {
-    internal class MacroCommand : Command
+    private readonly Command[] commands;
+
+    public MacroCommand(Command[] commands)
     {
-        Command[] commands;
-        public MacroCommand(Command[] commands){
-            this.commands = commands;
-        }
-        public void Execute(){
-            foreach(Command c in commands){
-                c.Execute();
-            }
-        }
-        public void Undo(){
-            foreach (Command c in commands){
-                c.Undo();
-            }
-        }
+        this.commands = commands;
+    }
+
+    public void Execute()
+    {
+        foreach (var c in commands) c.Execute();
+    }
+
+    public void Undo()
+    {
+        foreach (var c in commands) c.Undo();
     }
 }
